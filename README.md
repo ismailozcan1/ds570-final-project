@@ -23,21 +23,41 @@ For purchase rows, the value is recorded as 1.0. Since this does not represent r
 
 The raw dataset is stored in:
 
+```text
 data/raw/steam-200k.csv
+```
 
 ## Current Project Structure
 
+```text
 ds570-final-project/
 ├── data/
 │   ├── raw/
+│   │   └── steam-200k.csv
 │   └── processed/
+│       └── user_features.csv
 ├── notebooks/
+│   ├── 01_data_loading_and_eda.ipynb
+│   ├── 02_feature_engineering_and_clustering.ipynb
+│   └── 03_modeling_and_evaluation.ipynb
 ├── src/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── data_processing.py
+│   ├── clustering.py
+│   ├── modeling.py
+│   └── visualization.py
 ├── outputs/
+│   ├── figures/
+│   ├── reports/
+│   └── models/
 ├── app.py
 ├── requirements.txt
 ├── Dockerfile
+├── .dockerignore
+├── .gitignore
 └── README.md
+```
 
 ## Current Progress
 
@@ -49,6 +69,9 @@ So far, the project includes:
 - Basic cleaning functions
 - User-level feature engineering
 - Processed user feature table
+- Exploratory data analysis notebook
+- Feature engineering and clustering notebook
+- Predictive modeling and evaluation notebook
 
 The raw interaction-level data is converted into user-level features such as:
 
@@ -61,21 +84,17 @@ The raw interaction-level data is converted into user-level features such as:
 - hours_per_game
 - purchase_ratio
 
-These features will be used in the next steps for EDA, clustering, PCA visualization, predictive modeling, and dashboard development.
+These features are used for EDA, clustering, PCA visualization, predictive modeling, and dashboard development.
 
 ## Planned Next Steps
 
 The next parts of the project will include:
 
-1. Exploratory data analysis
-2. User behavior visualizations
-3. K-Means clustering
-4. Elbow Method and Silhouette Score
-5. PCA visualization
-6. Predictive model comparison
-7. Decision Tree interpretation
-8. Streamlit dashboard
-9. Docker testing
+1. Association rule analysis
+2. Recommendation-oriented insights
+3. Streamlit dashboard improvements
+4. Docker testing
+5. Final README updates
 
 ## Docker Usage
 
@@ -83,12 +102,18 @@ The project includes a Dockerfile. The Streamlit dashboard will be run with Dock
 
 Build the Docker image:
 
+```bash
 docker build -t ds570-steam-project .
+```
 
 Run the container:
 
+```bash
 docker run -p 8501:8501 ds570-steam-project
+```
 
 Then open the dashboard at:
 
+```text
 http://localhost:8501
+```

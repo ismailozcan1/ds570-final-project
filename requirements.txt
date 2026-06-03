@@ -5,6 +5,3 @@ plotly
 streamlit
 scikit-learn
 scipy
-joblib
-mlxtend
-networkx

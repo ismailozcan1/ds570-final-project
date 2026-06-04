@@ -5,10 +5,6 @@ ENV PYTHONUNBUFFERED=1
 ENV STREAMLIT_SERVER_HEADLESS=true
 ENV STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
 
-# Kurumsal ağ SSL denetimi (MITM proxy) altında pip'in PyPI sertifikasını
-# doğrulayamaması durumunda bu hostları güvenilir kabul et.
-ENV PIP_TRUSTED_HOST="pypi.org files.pythonhosted.org pypi.python.org"
-
 WORKDIR /app
 
 COPY requirements.txt .

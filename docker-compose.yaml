@@ -1,11 +1,10 @@
 services:
   dashboard:
     build: .
-    image: ds570-steam-dashboard
-    container_name: ds570-steam-dashboard
+    image: steam-user-segmentation-dashboard
+    container_name: steam-user-segmentation-dashboard
     ports:
       - "8502:8502"
     volumes:
-      # Veriyi read-only bağla: CSV'ler imajı yeniden build etmeden güncellenebilir.
       - ./data:/app/data:ro
     restart: unless-stopped

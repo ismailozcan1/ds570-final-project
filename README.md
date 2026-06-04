@@ -26,7 +26,7 @@ The dataset used in this project is the Steam Video Games dataset from Kaggle:
 
 https://www.kaggle.com/datasets/tamber/steam-video-games
 
-The raw data contains Steam user-game interactions with the following general structure:
+The raw data contains Steam user-game interactions with the following structure:
 
 ```text
 user_id | game | action | value
@@ -99,35 +99,15 @@ Make the project runnable with Docker and Docker Compose.
 Notebooks
 01_data_loading_and_eda.ipynb
 
-This notebook focuses on understanding the raw dataset. It includes:
-
-loading the dataset
-checking shape, columns, and data types
-checking missing values and duplicates
-analyzing purchase and play actions
-looking at top games and user interaction patterns
-visualizing basic distributions
-
-The purpose of this notebook is to understand the structure of the data before doing feature engineering.
+This notebook focuses on understanding the raw dataset. It includes data loading, basic data checks, missing value and duplicate checks, purchase/play action analysis, top games, user interaction patterns, and basic visualizations.
 
 02_feature_engineering_and_clustering.ipynb
 
-This notebook converts raw Steam interactions into user-level behavioral features. After that, it applies K-Means clustering.
+This notebook converts raw Steam interactions into user-level behavioral features. It then applies scaling, K-Means clustering, elbow method, silhouette score analysis, PCA visualization, cluster profile interpretation, and saves the clustered user data.
 
-Main steps include:
-
-creating user-level features
-scaling the features
-applying K-Means
-checking elbow and silhouette results
-visualizing clusters with PCA
-interpreting cluster profiles
-saving the clustered user data
 03_modeling_and_evaluation.ipynb
 
-This notebook focuses on supervised model comparison and interpretability.
-
-The K-Means cluster labels are used as a target-like variable. This does not mean that we are predicting external real-world labels. The goal is to check whether the discovered segments can be reproduced and explained using the behavioral features.
+This notebook focuses on supervised model comparison and interpretability. The K-Means cluster labels are used as a target-like variable to check whether the discovered segments can be reproduced and explained using behavioral features.
 
 Models used:
 
@@ -140,13 +120,13 @@ Gradient Boosting
 
 Evaluation includes:
 
-accuracy
-precision
-recall
+Accuracy
+Precision
+Recall
 F1-score
-confusion matrix
-classification report
-feature importance
+Confusion matrix
+Classification report
+Feature importance
 Feature Engineering
 
 The following user-level features are created:
@@ -198,18 +178,11 @@ This is why high model scores should not be interpreted as real-world predictive
 
 Model Evaluation
 
-The models are evaluated with:
+The models are evaluated with accuracy, precision, recall, and F1-score. Since the cluster sizes are not perfectly balanced, weighted precision, recall, and F1-score are used.
 
-accuracy
-precision
-recall
-F1-score
+A DummyClassifier is included as a baseline. This shows what performance looks like when the model does not really learn behavioral patterns and mostly follows the most frequent class.
 
-Because the cluster sizes are not perfectly balanced, weighted precision, recall, and F1-score are used.
-
-A DummyClassifier is included as a baseline. This is useful because it shows what performance looks like when the model does not really learn behavioral patterns and mostly follows the most frequent class.
-
-The Decision Tree is also analyzed in more detail because it is easier to interpret than more complex models. It helps show which features are most important for separating the discovered user segments.
+The Decision Tree is analyzed in more detail because it is easier to interpret than more complex models. It helps show which features are most important for separating the discovered user segments.
 
 Main Result
 
@@ -227,13 +200,13 @@ The project includes an interactive Streamlit dashboard in app.py.
 
 The dashboard includes:
 
-project overview
-data summary
-user-level feature preview
-feature distribution charts
-cluster distribution
-cluster profile table
-model comparison results
+Project overview
+Data summary
+User-level feature preview
+Feature distribution charts
+Cluster distribution
+Cluster profile table
+Model comparison results
 Decision Tree feature importance
 Decision Tree confusion matrix
 
@@ -302,15 +275,15 @@ Course Relevance
 
 This project combines several topics from DS570 in one workflow:
 
-data processing
-exploratory data analysis
-data visualization
-feature engineering
-clustering
+Data processing
+Exploratory data analysis
+Data visualization
+Feature engineering
+Clustering
 PCA
-supervised machine learning
-model evaluation
-model interpretability
+Supervised machine learning
+Model evaluation
+Model interpretability
 Streamlit dashboard development
 Git/GitHub version control
 Docker containerization

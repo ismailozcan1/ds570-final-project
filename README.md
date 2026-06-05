@@ -93,7 +93,7 @@ The project follows this workflow:
 4. Convert interaction-level data into user-level behavioral features.
 5. Scale the behavioral features before clustering.
 6. Use K-Means clustering to discover user segments.
-7. Use elbow method and silhouette score to evaluate the cluster structure.
+7. Use the elbow method and cluster profile interpretation to evaluate the cluster structure.
 8. Use PCA to visualize the clusters in two dimensions.
 9. Use supervised models to reproduce and explain the K-Means cluster labels.
 10. Compare the models with a DummyClassifier baseline.
@@ -111,7 +111,7 @@ This notebook focuses on understanding the raw dataset. It includes data loading
 
 ### 02_feature_engineering_and_clustering.ipynb
 
-This notebook converts raw Steam interactions into user-level behavioral features. It then applies scaling, K-Means clustering, elbow method, silhouette score analysis, PCA visualization, cluster profile interpretation, and saves the clustered user data.
+This notebook converts raw Steam interactions into user-level behavioral features. It then applies scaling, K-Means clustering, elbow method, PCA visualization, cluster profile interpretation, and saves the clustered user data.
 
 ### 03_modeling_and_evaluation.ipynb
 
